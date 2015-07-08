@@ -1,5 +1,5 @@
 <p>This is the partial for view 1 in view folder.</p>
-<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+<div ng-controller="View1Ctrl as ctrl" flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
     <md-toolbar layout="row" class="md-whiteframe-z1">
       <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
@@ -9,7 +9,7 @@
     </md-toolbar>
 
     <md-content flex id="content">
-        <md-icon md-svg-icon="svg-1" class="avatar"></md-icon>
+        <md-icon md-svg-icon="svg-11" class="avatar"></md-icon>
         <h2>test</h2>
         <p>test2</p>
 
@@ -17,6 +17,14 @@
           <md-tooltip>Contact none</md-tooltip>
           <md-icon md-svg-icon="share"></md-icon>
         </md-button>
+        
+        <md-list>
+          <md-subheader class="md-no-sticky">Work item for this page</md-subheader>
+          <md-list-item ng-repeat="item in listView1">
+            <div class="md-list-item-text">
+              <h4>{{ item.order }}&nbsp;{{ item.name }}</h4>
+            </div>
+          </md-list-item>
+        </md-list>
       </md-content>
-
   </div>

@@ -22,6 +22,11 @@ angular.module('myApp', [
     .state('view2', {
         url: '/view2',
         templateUrl: 'views/view2.html'
+    })
+    
+     .state('view3', {
+        url: '/view3',
+        templateUrl: 'views/view3.html'
     });
   
   
@@ -35,6 +40,6 @@ angular.module('myApp', [
     .icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
   $mdThemingProvider.theme('default')
-    .primaryPalette('brown')
-    .accentPalette('red');
+    .primaryPalette('purple')
+    .accentPalette('orange');
 });

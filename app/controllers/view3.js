@@ -1,48 +1,32 @@
 'use strict';
 
 angular.module('myApp')
-  .controller('View2Ctrl', function($scope, $timeout, $q, $log) {
+  .controller('View3Ctrl', function($scope, $timeout, $q, $log) {
     
-    $scope.listView2 = [
+    $scope.listView3 = [
       {
         order: '1',
-        name: 'Autocomplete'
+        name: 'Grid List'
       },
       {
         order: '2',
-        name: 'Checkbox'
+        name: 'List'
       },
       {
         order: '3',
-        name: 'Button'
+        name: 'Menu'
       },
       {
         order: '4',
-        name: 'Chips'
+        name: 'Subheader'
       },
       {
         order: '5',
-        name: 'Input'
+        name: 'Toast'
       },
       {
         order: '6',
-        name: 'Radio Button'
-      },
-      {
-        order: '7',
-        name: 'Select'
-      },
-      {
-        order: '8',
-        name: 'Slider'
-      },
-      {
-        order: '9',
-        name: 'Swipe'
-      },
-      {
-        order: '10',
-        name: 'Switch'
+        name: 'Content'
       }
       
       ];
