@@ -1,0 +1,10 @@
+<div ng-controller="vPhotosCtrl as ctrl" layout="column">
+  
+  <span>FlickR Service - Images Example</span>
+  <br/>
+  <ul class="grid" masonry="true">
+      <li ng-repeat="i in photos.items">
+          <img ng-src="{{i.media.m}}" />
+      </li>
+  </ul>
+</div>

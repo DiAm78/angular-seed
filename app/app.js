@@ -4,7 +4,9 @@
 angular.module('myApp', [
   'ui.router',
   'ngMaterial',
-  'myApp.version'
+  'myApp.version',
+  'ng',
+  'ngResource'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider) {
@@ -27,6 +29,11 @@ angular.module('myApp', [
      .state('view3', {
         url: '/view3',
         templateUrl: 'views/view3.html'
+    })
+    
+    .state('vPhotos', {
+        url: '/vPhotos',
+        templateUrl: 'views/vPhotos.html'
     });
   
   
@@ -40,6 +47,36 @@ angular.module('myApp', [
     .icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
   $mdThemingProvider.theme('default')
-    .primaryPalette('purple')
+    .primaryPalette('indigo')
     .accentPalette('orange');
+})
+
+.controller('myAppCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
+
+    $scope.toggleLeft = buildToggler('left');
+    $scope.toggleRight = buildToggler('right');
+
+    /**
+     * Build handler to open/close a SideNav; when animation finishes
+     * report completion in console
+     */
+    function buildToggler(navID) {
+      var debounceFn =  $mdUtil.debounce(function(){
+            $mdSidenav(navID)
+              .toggle()
+              .then(function () {
+                $log.debug("toggle " + navID + " is done");
+              });
+          },300);
+
+      return debounceFn;
+    };
+    
+    $scope.close = function () {
+      $mdSidenav('left').close()
+        .then(function () {
+          $log.debug("close LEFT is done");
+        });
+    };
 });
+

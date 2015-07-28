@@ -15,20 +15,44 @@
   <link rel="stylesheet" href="assets/css/angular-material.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body ng-app="MyApp">
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-     <li><a href="#/view3">view3</a></li>
-  </ul>
-
+<body ng-app="MyApp" layout="row" ng-controller="myAppCtrl">
+  
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  
+ <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')">
 
-  <div ui-view></div>
-  <br/>
-  <div style="color:grey;">&nbsp;Angular Material Design Seed App: v<span app-version></span></div>
+    <md-toolbar class="md-whiteframe-z1">
+      <h1>Menu</h1>
+    </md-toolbar>
+
+    <md-list>
+      <ul class="menu">
+        <li><a href="#/view1" ng-click="close()">view1</a></li>
+        <li><a href="#/view2" ng-click="close()">view2</a></li>
+        <li><a href="#/view3" ng-click="close()">view3</a></li>
+        <li><a href="#/vPhotos" ng-click="close()">FlickR</a></li>
+      </ul>
+    </md-list>
+
+  </md-sidenav>
+ 
+ <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+      <md-button class="menu" hide-gt-sm ng-click="toggleLeft()">
+        <md-icon md-svg-icon="menu" aria-label="Menu List"></md-icon>
+      </md-button>
+      <h1>Angular Material - Starter App V&nbsp;<span app-version></span></h1>
+    </md-toolbar>
+
+    <md-content flex  ui-view>
+    </md-content>
+  </div>
+ 
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -44,8 +68,12 @@
   <script src="controllers/view1.js"></script>
   <script src="controllers/view2.js"></script>
   <script src="controllers/view3.js"></script>
+  <script src="controllers/vPhotos.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+  <script src="directives/flickrPhoto.js"></script>
+  <script src="directives/flickrSearch.js"></script>
+  <script src="services/flickr.js"></script>
 </body>
 </html>

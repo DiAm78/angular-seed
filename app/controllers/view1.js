@@ -9,7 +9,7 @@ angular.module('myApp')
       },
       {
         order: '2',
-        name: 'Whiteframe2'
+        name: 'Whiteframe more'
       },
       {
         order: '3',
