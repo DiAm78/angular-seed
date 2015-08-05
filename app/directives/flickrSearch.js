@@ -1,5 +1,5 @@
 angular.module('myApp')
-  .directive('masonry', function ($parse) {
+  .directive('masonry1', function ($parse) {
     return {
         restrict: 'AC',
         link: function (scope, elem, attrs) {

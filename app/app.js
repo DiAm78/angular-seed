@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ui.router',
   'ngMaterial',
+  'ngMdIcons',
   'myApp.version',
   'ng',
   'ngResource'
@@ -55,6 +56,31 @@ angular.module('myApp', [
 
     $scope.toggleLeft = buildToggler('left');
     $scope.toggleRight = buildToggler('right');
+    
+    $scope.menulist = [
+      {
+        icon: 'view_list',
+        title: 'View 1',
+        link: '#/view1'
+      },
+      {
+        icon: 'view_list',
+        title: 'View 2',
+        link: '#/view2'
+      },
+      {
+        icon: 'view_list',
+        title: 'View 3',
+        link: '#/view3'
+      },
+      {
+        icon: 'photo',
+        title: 'FlickR Example',
+        link: '#/vPhotos'
+      }
+      
+      ];
+    
 
     /**
      * Build handler to open/close a SideNav; when animation finishes

@@ -1,23 +1,16 @@
-html, body {
-  font-family: 'Roboto', sans-serif;
-  font-size:14px;
-  height:100%;
-  margin: 0px;
-  padding: 0px;
-}
 
 /* Toolbar area */
 
 .menu {
   background-color: transparent;
   border: none;
-  height: 52px;
-  margin: 16px;
+  height: 38px;
+  margin: 8px;
   width: 36px;
 }
 
 md-toolbar h1 {
-  margin: auto;
+  margin:12px 5px;
 }
 
 /* Sidenav area */
@@ -32,11 +25,7 @@ md-list .md-button {
     color: #03a9f4;
   }
 
-  md-sidenav  md-list {
-    padding: 0px 0px 8px 0px;
-  }
-
-
+ 
 /* Primary content area */
 
 #content {
@@ -70,11 +59,6 @@ md-list .md-button {
   height:36px;
 }
 
-md-button.menuBtn > md-icon {
-  fill:white;
-  width:24px;
-  height:24px;
-}
 
 #content .md-button.contact:active > md-icon {
   background-color: #dadada;
@@ -129,15 +113,7 @@ span.name {
   padding-left:5px;
 }
 
-.masonry .masonry-item {
- width: 220px;
- margin: 10px;
- float: left;
-}
 
-.masonry-item img {
- width: 220px;   
-}
 
 .grid {
     border: solid 1px #ccc;
@@ -154,4 +130,5 @@ span.name {
 .grid li img {
   max-width: 370px;
 }
+
 

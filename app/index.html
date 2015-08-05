@@ -9,10 +9,10 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <!--link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css"-->
+  <!--link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"-->
   <link rel="stylesheet" href="assets/css/app.css">
-  <link rel="stylesheet" href="assets/css/angular-material.css">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-app="MyApp" layout="row" ng-controller="myAppCtrl">
@@ -21,30 +21,30 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   
- <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-                md-component-id="left"
-                md-is-locked-open="$mdMedia('gt-sm')">
-
-    <md-toolbar class="md-whiteframe-z1">
-      <h1>Menu</h1>
-    </md-toolbar>
-
-    <md-list>
-      <ul class="menu">
-        <li><a href="#/view1" ng-click="close()">view1</a></li>
-        <li><a href="#/view2" ng-click="close()">view2</a></li>
-        <li><a href="#/view3" ng-click="close()">view3</a></li>
-        <li><a href="#/vPhotos" ng-click="close()">FlickR</a></li>
-      </ul>
+  <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <md-toolbar class="md-whiteframe-z1">
+        <h1>Menu</h1>
+      </md-toolbar>
+      <md-list>
+      <md-item ng-repeat="item in menulist">
+        <a ng-href="{{item.link}}" ng-click="close()">
+          <md-item-content md-ink-ripple layout="row" layout-align="start center">
+            <div class="inset">
+              <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+            </div>
+            <div class="inset">{{item.title}}
+            </div>
+          </md-item-content>
+        </a>
+      </md-item>
     </md-list>
+    </md-sidenav>
+  
+ <div flex layout="column" tabIndex="-1" layout-fill  role="main" class="md-whiteframe-z2">
 
-  </md-sidenav>
- 
- <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
-
-    <md-toolbar layout="row" class="md-whiteframe-z1">
-      <md-button class="menu" hide-gt-sm ng-click="toggleLeft()">
-        <md-icon md-svg-icon="menu" aria-label="Menu List"></md-icon>
+    <md-toolbar layout="row" class="md-whiteframe-z2">
+      <md-button ng-click="toggleLeft()" hide-gt-md aria-label="Menu">
+            <ng-md-icon style="fill:white" size="36" icon="menu"></ng-md-icon>
       </md-button>
       <h1>Angular Material - Starter App V&nbsp;<span app-version></span></h1>
     </md-toolbar>
@@ -64,6 +64,7 @@
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
   <script src="app.js"></script>
   <script src="controllers/view1.js"></script>
   <script src="controllers/view2.js"></script>
